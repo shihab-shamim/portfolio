@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Heart, Github, Linkedin, Twitter, Mail, Facebook } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
             className="mb-6 sm:mb-8"
           >
             <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
-              JD.dev
+              SHIHAB SHAMIM
             </h3>
             <p className="mt-2 text-slate-400 text-sm sm:text-base px-4">
               Full Stack Developer passionate about creating exceptional digital experiences
@@ -34,12 +34,13 @@ const Footer: React.FC = () => {
             className="flex justify-center space-x-4 sm:space-x-6 mb-6 sm:mb-8"
           >
             {[
-              { icon: <Github size={20} />, href: 'https://github.com', label: 'GitHub' },
-              { icon: <Linkedin size={20} />, href: 'https://linkedin.com', label: 'LinkedIn' },
-              { icon: <Twitter size={20} />, href: 'https://twitter.com', label: 'Twitter' },
-              { icon: <Mail size={20} />, href: 'mailto:john.doe@example.com', label: 'Email' }
+              { icon: <Github size={20} />, href: 'https://github.com/shihab-shamim', label: 'GitHub' },
+              { icon: <Linkedin size={20} />, href: 'https://www.linkedin.com/in/shihabshamim/', label: 'LinkedIn' },
+              { icon: <Facebook size={20} />, href: 'https://www.facebook.com/Shihab.shamim.2024', label: 'Facebook' },
+              { icon: <Mail size={20} />, href: 'mailto:shihabshamim767@gmail.com', label: 'Email' }
             ].map((social) => (
               <motion.a
+              target='_blank'
                 key={social.label}
                 href={social.href}
                 whileHover={{ scale: 1.2, y: -2 }}
@@ -89,7 +90,7 @@ const Footer: React.FC = () => {
             className="border-t border-slate-800 pt-6 sm:pt-8"
           >
             <p className="text-slate-400 flex items-center justify-center text-sm sm:text-base px-4">
-              © {currentYear} John Doe. Made with <Heart size={14} className="mx-1 text-red-500" /> and lots of coffee
+              © {currentYear} Shihab Shamim. Made with <Heart size={14} className="mx-1 text-red-500" /> and lots of coffee
             </p>
             <p className="text-slate-500 text-xs sm:text-sm mt-2">
               Built with React, TypeScript, and Tailwind CSS

@@ -1,22 +1,45 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Github,
+  Linkedin,
+  Facebook,
+} from "lucide-react";
+import { useForm, ValidationError } from "@formspree/react";
+import { toast, ToastContainer } from "react-toastify";
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
+   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
+  const [state, handleSubmit] = useForm("mkgbyzby");
+useEffect(() => {
+  if (state.succeeded) {
+    toast.success("Email sent successfully!");
+  setFormData(  {
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
+  }
+}, [state.succeeded]);
+ 
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' });
-  };
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   // Handle form submission here
+  //   console.log('Form submitted:', formData);
+  //   // Reset form
+  //   setFormData({ name: '', email: '', subject: '', message: '' });
+  // };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -26,7 +49,11 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-white dark:bg-slate-900">
+    <section
+      id="contact"
+      className="py-16 sm:py-20 lg:py-24 bg-white dark:bg-slate-900"
+    >
+      <ToastContainer />
       <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -40,7 +67,8 @@ const Contact: React.FC = () => {
           </h2>
           <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-teal-500 to-blue-600 mx-auto mb-6 sm:mb-8"></div>
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto px-4">
-            Ready to start your next project? Let's discuss how we can work together to bring your ideas to life.
+            Ready to start your next project? Let's discuss how we can work
+            together to bring your ideas to life.
           </p>
         </motion.div>
 
@@ -56,7 +84,7 @@ const Contact: React.FC = () => {
               <h3 className="text-xl sm:text-2xl font-semibold mb-6 sm:mb-8 text-slate-900 dark:text-slate-100">
                 Contact Information
               </h3>
-              
+
               <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
                 <motion.div
                   whileHover={{ x: 10 }}
@@ -66,8 +94,12 @@ const Contact: React.FC = () => {
                     <Mail className="text-white" size={18} />
                   </div>
                   <div className="min-w-0">
-                    <div className="font-medium text-slate-900 dark:text-slate-100 text-sm sm:text-base">Email</div>
-                    <div className="text-slate-600 dark:text-slate-400 text-sm sm:text-base truncate">john.doe@example.com</div>
+                    <div className="font-medium text-slate-900 dark:text-slate-100 text-sm sm:text-base">
+                      Email
+                    </div>
+                    <div className="text-slate-600 dark:text-slate-400 text-sm sm:text-base truncate">
+                      shihabshamim767@gmail.com
+                    </div>
                   </div>
                 </motion.div>
 
@@ -79,8 +111,12 @@ const Contact: React.FC = () => {
                     <Phone className="text-white" size={18} />
                   </div>
                   <div>
-                    <div className="font-medium text-slate-900 dark:text-slate-100 text-sm sm:text-base">Phone</div>
-                    <div className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">+1 (555) 123-4567</div>
+                    <div className="font-medium text-slate-900 dark:text-slate-100 text-sm sm:text-base">
+                      Phone
+                    </div>
+                    <div className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+                      +8801309183907
+                    </div>
                   </div>
                 </motion.div>
 
@@ -92,8 +128,12 @@ const Contact: React.FC = () => {
                     <MapPin className="text-white" size={18} />
                   </div>
                   <div>
-                    <div className="font-medium text-slate-900 dark:text-slate-100 text-sm sm:text-base">Location</div>
-                    <div className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">San Francisco, CA</div>
+                    <div className="font-medium text-slate-900 dark:text-slate-100 text-sm sm:text-base">
+                      Location
+                    </div>
+                    <div className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+                      Uttara,Dahaka
+                    </div>
                   </div>
                 </motion.div>
               </div>
@@ -105,11 +145,24 @@ const Contact: React.FC = () => {
                 </h4>
                 <div className="flex space-x-3 sm:space-x-4">
                   {[
-                    { icon: <Github size={18} />, href: 'https://github.com', label: 'GitHub' },
-                    { icon: <Linkedin size={18} />, href: 'https://linkedin.com', label: 'LinkedIn' },
-                    { icon: <Twitter size={18} />, href: 'https://twitter.com', label: 'Twitter' }
+                    {
+                      icon: <Github size={18} />,
+                      href: "https://github.com/shihab-shamim",
+                      label: "GitHub",
+                    },
+                    {
+                      icon: <Linkedin size={18} />,
+                      href: "https://www.linkedin.com/in/shihabshamim/",
+                      label: "LinkedIn",
+                    },
+                    {
+                      icon: <Facebook size={18} />,
+                      href: "https://www.facebook.com/Shihab.shamim.2024",
+                      label: "Facebook",
+                    },
                   ].map((social) => (
                     <motion.a
+                      target="_blank"
                       key={social.label}
                       href={social.href}
                       whileHover={{ scale: 1.1, y: -2 }}
@@ -130,7 +183,12 @@ const Contact: React.FC = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <form
+                action="https://formspree.io/f/mkgbyzby"
+                method="POST"
+                onSubmit={handleSubmit}
+                className="space-y-4 sm:space-y-6"
+              >
                 <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label className="block text-sm font-medium mb-2 text-slate-700 dark:text-slate-300">

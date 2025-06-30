@@ -35,7 +35,7 @@ const Header: React.FC = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.4}}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm shadow-lg'
@@ -48,7 +48,7 @@ const Header: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent"
           >
-            JD.dev
+           SHIHAB SHAMIM
           </motion.div>
 
           {/* Desktop Navigation */}

@@ -4,47 +4,41 @@ import { MapPin, Calendar, Building, GraduationCap } from 'lucide-react';
 
 const Experience: React.FC = () => {
   const experiences = [
-    {
-      title: 'Senior Full Stack Developer',
-      company: 'TechCorp Inc.',
-      location: 'San Francisco, CA',
-      period: '2022 - Present',
-      description: 'Led development of microservices architecture serving 1M+ users. Mentored junior developers and implemented CI/CD pipelines that reduced deployment time by 70%.',
-      skills: ['React', 'Node.js', 'AWS', 'Docker', 'Kubernetes']
-    },
-    {
-      title: 'Full Stack Developer',
-      company: 'StartupXYZ',
-      location: 'New York, NY',
-      period: '2020 - 2022',
-      description: 'Built the entire MVP from scratch using React and Express.js. Scaled the platform to handle 100K+ concurrent users and integrated third-party payment systems.',
-      skills: ['React', 'Express.js', 'PostgreSQL', 'Redis', 'Stripe']
-    },
-    {
-      title: 'Frontend Developer',
-      company: 'Digital Agency',
-      location: 'Los Angeles, CA',
-      period: '2019 - 2020',
-      description: 'Developed responsive web applications for various clients. Improved page load speeds by 40% through optimization techniques and modern web practices.',
-      skills: ['Vue.js', 'JavaScript', 'SCSS', 'Webpack', 'PWA']
-    }
+  {
+  title: 'Jr. Software Developer',
+  company: 'bplugins.com',
+  location: 'Uttara, Sector 12',
+  period: '2024 - Present',
+  description: 'Full-stack developer with MERN expertise and hands-on experience in custom WordPress plugin developmen',
+skills: [
+  // Frontend
+  'JavaScript', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS',
+  'Bootstrap', 'SCSS', 'Vite',
+
+  // Backend & Full Stack
+  'Node.js', 'Express.js', 'MongoDB', 'REST API', 'Firebase',
+
+  // WordPress & Plugin Development
+  'PHP','WordPress Plugin Development',  'Shortcodes', 'WP REST API',
+
+  // Dev Tools & Practices
+  'Git', 'GitHub', 'Postman', 'Agile/Scrum', 'CI/CD', 'Microservices'
+]
+
+}
+
+   
   ];
 
   const education = [
-    {
-      degree: 'Master of Science in Computer Science',
-      school: 'Stanford University',
-      location: 'Stanford, CA',
-      period: '2017 - 2019',
-      description: 'Specialized in Machine Learning and Distributed Systems. Graduated Magna Cum Laude.'
-    },
-    {
-      degree: 'Bachelor of Science in Software Engineering',
-      school: 'UC Berkeley',
-      location: 'Berkeley, CA',
-      period: '2013 - 2017',
-      description: 'Focus on Web Technologies and Database Systems. Dean\'s List for 6 semesters.'
-    }
+   {
+  degree: 'Bachelor of Arts (Honours) in Islamic History',
+  school: 'National University, Bangladesh',
+  location: 'Gazipur, Bangladesh',
+  period: '2023 - Ongoing',
+  description: 'Currently pursuing a BA (Honours) degree with a strong academic focus and commitment to continuous learning alongside professional development in web technologies.'
+}
+
   ];
 
   return (
@@ -188,7 +182,7 @@ const Experience: React.FC = () => {
           </div>
         </div>
 
-        {/* Achievements */}
+        {/* Achievements 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -219,7 +213,7 @@ const Experience: React.FC = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
