@@ -88,7 +88,7 @@ const About: React.FC = () => {
         <motion.span
           key={tech}
           whileHover={{ scale: 1.05 }}
-          className="px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-teal-500/10 to-blue-600/10 border border-teal-500/20 rounded-full text-sm sm:text-base text-teal-600 dark:text-teal-400 font-medium"
+          className="px-3 max-w-[1200px] sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-teal-500/10 to-blue-600/10 border border-teal-500/20 rounded-full text-sm sm:text-base text-teal-600 dark:text-teal-400 font-medium"
         >
           {tech}
         </motion.span>
