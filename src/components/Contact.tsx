@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import {
   Mail,
   Phone,
@@ -19,18 +20,25 @@ const Contact: React.FC = () => {
     subject: '',
     message: ''
   });
-  const [state, handleSubmit] = useForm("mkgbyzby");
-useEffect(() => {
-  if (state.succeeded) {
-    toast.success("Email sent successfully!");
-  setFormData(  {
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
-  }
-}, [state.succeeded]);
+const handleSubmit=(e)=>{
+  e.preventDefault()
+   emailjs
+      .send(
+        "service_yz8r3fj",  // এখানে তোমার EmailJS Service ID
+        "template_asdksv8", // এখানে তোমার EmailJS Template ID
+        formData,
+        "vz_mcsgnNSq-e__68"   // এখানে তোমার EmailJS Public Key
+      )
+      .then(() => {
+        toast.success("Email sent successfully!");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      })
+      .catch((error) => {
+        toast.error("Failed to send email. Please try again.");
+        console.error("EmailJS error:", error);
+      });
+}
+
  
 
   // const handleSubmit = (e: React.FormEvent) => {

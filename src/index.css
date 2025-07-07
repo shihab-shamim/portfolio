@@ -3,18 +3,18 @@
 @tailwind utilities;
 
 /* Hide default cursor on desktop */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   * {
     cursor: none !important;
-  }
+  } */
   
   /* Show cursor on mobile devices */
-  @media (hover: none) and (pointer: coarse) {
+  /* @media (hover: none) and (pointer: coarse) {
     * {
       cursor: auto !important;
     }
   }
-}
+} */
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
@@ -39,7 +39,10 @@ html {
 }
 body{
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+}
+#root{
+  overflow: hidden;
 }
 
 /* Selection color */
