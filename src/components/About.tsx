@@ -65,36 +65,50 @@ const About: React.FC = () => {
   </p>
 
   {/* Tech Stack */}
-  <div className="mb-6 sm:mb-8">
-    <h4 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-slate-900 dark:text-slate-100">
-      Technologies I Love
-    </h4>
-    <div className="flex flex-wrap gap-2 sm:gap-3">
-      {[
-  'React',
-  'JavaScript',
-  'Node.js',
-  'Express.js',
-  'MongoDB',
-  'Tailwind CSS',
-  'Bootstrap',
-  'Firebase',
-  'JWT',
-  'Stripe',
-  'Git & GitHub',
-  'Figma'
-]
-.map((tech) => (
-        <motion.span
-          key={tech}
-          whileHover={{ scale: 1.05 }}
-          className="px-3 max-w-[1200px] sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-teal-500/10 to-blue-600/10 border border-teal-500/20 rounded-full text-sm sm:text-base text-teal-600 dark:text-teal-400 font-medium"
-        >
-          {tech}
-        </motion.span>
-      ))}
-    </div>
+<div className="mb-6 sm:mb-8">
+  <h4 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-slate-900 dark:text-slate-100">
+    Technologies I Love
+  </h4>
+  <div className="flex flex-wrap gap-2 sm:gap-3">
+    {[
+      // Frontend
+      'React',
+      'Next.js',
+      'JavaScript',
+      'TypeScript',
+      'Tailwind CSS',
+      'Bootstrap',
+      'SCSS',
+      'Framer Motion',
+      // Backend
+      'Node.js',
+      'Express.js',
+      'FastAPI',
+      'MongoDB',
+      'SQL (MySQL/PostgreSQL/SQLite)',
+      'Prisma ORM',
+      'Sequelize ORM',
+      'Firebase',
+      'JWT / Better Auth',
+      'Stripe',
+      // Tools & Collaboration
+      'Git & GitHub',
+      'VS Code',
+      'Postman',
+      'Figma',
+      'Vercel',
+      'Netlify'
+    ].map((tech) => (
+      <motion.span
+        key={tech}
+        whileHover={{ scale: 1.05 }}
+        className="px-3 max-w-[1200px] sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-teal-500/10 to-blue-600/10 border border-teal-500/20 rounded-full text-sm sm:text-base text-teal-600 dark:text-teal-400 font-medium"
+      >
+        {tech}
+      </motion.span>
+    ))}
   </div>
+</div>
 </motion.div>
 
 
